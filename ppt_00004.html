@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워크플로우 상세 과정 1단계</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #16161e;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1b26 0%, #16161e 100%);
+            transform-origin: center center;
+        }
+        .header {
+            background-color: #24283b;
+            color: #7aa2f7;
+            padding: 15px 40px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px 40px;
+        }
+        .section-title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #7aa2f7;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .workflows {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .workflow {
+            flex: 1;
+            background-color: #24283b;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .workflow:hover {
+            transform: scale(1.05);
+        }
+        .workflow-mobile {
+            border-top: 5px solid #bb9af7;
+        }
+        .workflow-mobile:hover {
+            box-shadow: 0 8px 20px rgba(187, 154, 247, 0.4);
+        }
+        .workflow-desktop {
+            border-top: 5px solid #7aa2f7;
+        }
+        .workflow-desktop:hover {
+            box-shadow: 0 8px 20px rgba(122, 162, 247, 0.4);
+        }
+        .workflow-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            color: #c0caf5;
+        }
+        .workflow-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #1a1b26;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 20px;
+        }
+        .mobile-icon {
+            color: #bb9af7;
+        }
+        .desktop-icon {
+            color: #7aa2f7;
+        }
+        .steps {
+            position: relative;
+        }
+        .step {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #1a1b26;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .mobile-step .step-icon {
+            color: #bb9af7;
+        }
+        .desktop-step .step-icon {
+            color: #7aa2f7;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #c0caf5;
+        }
+        .step-desc {
+            font-size: 16px;
+            color: #a9b1d6;
+            line-height: 1.4;
+        }
+        .connector {
+            position: absolute;
+            left: 25px;
+            top: 50px;
+            width: 2px;
+            height: 75%;
+            background-color: #2c3049;
+            z-index: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #565f89;
+            font-size: 16px;
+        }
+    
+</style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">⚙️ 워크플로우 상세 과정</div>
+        
+        <div class="content">
+            <div class="section-title">1단계: 정보 발견 및 수집</div>
+            
+            <div class="workflows">
+                <div class="workflow workflow-mobile">
+                    <div class="workflow-title">
+                        <div class="workflow-icon mobile-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div>모바일 수집 프로세스</div>
+                    </div>
+                    
+                    <div class="steps">
+                        <div class="connector"></div>
+                        
+                        <div class="step mobile-step">
+                            <div class="step-icon"><i class="fas fa-subway"></i></div>
+                            <div class="step-content">
+                                <div class="step-title">지하철에서 흥미로운 기사 발견</div>
+                                <div class="step-desc">출퇴근 시간이나 이동 중에 발견한 유용한 정보</div>
+                            </div>
+                        </div>
+                        
+                        <div class="step mobile-step">
+                            <div class="step-icon"><i class="fab fa-telegram-plane"></i></div>
+                            <div class="step-content">
+                                <div class="step-title">텔레그램으로 링크 공유</div>
+                                <div class="step-desc">지정된 텔레그램 봇 채널에 URL 공유</div>
+                            </div>
+                        </div>
+                        
+                        <div class="step mobile-step">
+                            <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="step-content">
+                                <div class="step-title">n8n 워크플로우 자동 실행</div>
+                                <div class="step-desc">텔레그램 웹훅이 n8n 자동화 워크플로우를 트리거</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow workflow-desktop">
+                    <div class="workflow-title">
+                        <div class="workflow-icon desktop-icon"><i class="fas fa-desktop"></i></div>
+                        <div>PC 수집 프로세스</div>
+                    </div>
+                    
+                    <div class="steps">
+                        <div class="connector"></div>
+                        
+                        <div class="step desktop-step">
+                            <div class="step-icon"><i class="fas fa-building"></i></div>
+                            <div class="step-content">
+                                <div class="step-title">회사에서 유용한 자료 발견</div>
+                                <div class="step-desc">업무 중 유용한 웹사이트, 문서 또는 참고자료</div>
+                            </div>
+                        </div>
+                        
+                        <div class="step desktop-step">
+                            <div class="step-icon"><i class="fab fa-chrome"></i></div>
+                            <div class="step-content">
+                                <div class="step-title">Chrome 확장프로그램으로 원클릭 수집</div>
+                                <div class="step-desc">자체 개발한 확장프로그램으로 현재 페이지 저장</div>
+                                <div class="step-desc">Windsurf 에디터로 바이브코딩 방식 개발</div>
+                            </div>
+                        </div>
+                        
+                        <div class="step desktop-step">
+                            <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="step-content">
+                                <div class="step-title">n8n 워크플로우 자동 실행</div>
+                                <div class="step-desc">확장프로그램이 n8n 웹훅을 호출하여 자동화 시작</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">4</div>
+    </div>
+<script>
+      function scaleSlide() {
+        const slide = document.querySelector('.slide');
+        if (!slide) return;
+        const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+        slide.style.transform = `scale(${scale})`;
+      }
+      window.addEventListener('resize', scaleSlide);
+      document.addEventListener('DOMContentLoaded', scaleSlide);
+    </script>
+<script>
+  document.addEventListener('keydown', function(event) {
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const match = currentFile.match(/ppt_(\d{5})\.html/);
+
+    if (match && match[1]) {
+      const currentNum = parseInt(match[1], 10);
+      const totalPages = 13; // 전체 페이지 수 (ppt_00001 ~ ppt_00013)
+
+      let targetPageFileName = null;
+
+      if (event.key === 'ArrowLeft') {
+        if (currentNum > 1) {
+          targetPageFileName = `ppt_${String(currentNum - 1).padStart(5, '0')}.html`;
+        }
+      } else if (event.key === 'ArrowRight') {
+        if (currentNum < totalPages) {
+          targetPageFileName = `ppt_${String(currentNum + 1).padStart(5, '0')}.html`;
+        }
+      }
+
+      if (targetPageFileName) {
+        const newPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) + targetPageFileName;
+        window.location.href = newPath;
+      }
+    }
+  });
+
+  // Responsive scaling
+  function resizeAndPositionSlide() {
+    const slide = document.querySelector('.slide');
+    if (!slide) return;
+
+    const slideWidth = 1280;
+    const slideHeight = 720;
+    
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const scale = Math.min(windowWidth / slideWidth, windowHeight / slideHeight);
+
+    slide.style.transform = `scale(${scale})`;
+  }
+
+  window.addEventListener('load', resizeAndPositionSlide);
+  window.addEventListener('resize', resizeAndPositionSlide);
+</script>
+
+</body>
+</html>

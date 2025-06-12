@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워크플로우 2단계 - AI 기반 자동 처리</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #16161e;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #1a1b26 0%, #16161e 100%);
+            transform-origin: center center;
+        }
+        .header {
+            background-color: #24283b;
+            color: #7aa2f7;
+            padding: 15px 40px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 15px 20px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #7aa2f7;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .workflow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .n8n-banner {
+            background-color: rgba(122, 162, 247, 0.2);
+            color: #c0caf5;
+            border-radius: 10px;
+            padding: 8px 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(122, 162, 247, 0.3);
+        }
+        .workflow-section {
+            background-color: #24283b;
+            border-radius: 15px;
+            padding: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .section-header {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #c0caf5;
+            border-bottom: 2px solid #2c3049;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(122, 162, 247, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: #7aa2f7;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .process-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .process-item {
+            flex: 1;
+            min-width: calc(50% - 15px);
+            display: flex;
+            align-items: flex-start;
+            background-color: #1a1b26;
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #2c3049;
+        }
+        .item-icon {
+            width: 42px;
+            height: 42px;
+            background-color: #2c3049;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 20px;
+            color: #7aa2f7;
+            flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .item-content {
+            flex: 1;
+        }
+        .item-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #c0caf5;
+        }
+        .item-desc {
+            color: #9aa5ce;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .data-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .data-step {
+            background-color: #1a1b26;
+            border: 1px solid #2c3049;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            width: 120px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .data-step-icon {
+            font-size: 24px;
+            color: #7aa2f7;
+            margin-bottom: 5px;
+        }
+        .data-step-text {
+            font-size: 14px;
+            color: #9aa5ce;
+        }
+        .flow-arrow {
+            color: #7aa2f7;
+            font-size: 20px;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #565f89;
+            font-size: 16px;
+        }
+    
+</style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">⚙️ 워크플로우 상세 과정</div>
+        
+        <div class="content">
+            <div class="section-title">2단계: AI 기반 자동 처리</div>
+            
+            <div class="n8n-banner">
+                <i class="fas fa-sync fa-spin" style="margin-right: 10px;"></i>
+                n8n 워크플로우가 24시간 내내 작동
+            </div>
+            
+            <div class="workflow-container">
+                <div class="workflow-section">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-search"></i></div>
+                        콘텐츠 분석 및 추출
+                    </div>
+                    <div class="process-grid">
+                        <div class="process-item">
+                            <div class="item-icon"><i class="fas fa-globe"></i></div>
+                            <div class="item-content">
+                                <div class="item-title">웹페이지</div>
+                                <div class="item-desc">HTML 추출 및 불필요한 내용 제거</div>
+                                <div class="item-desc">AI 활용 요약 정리</div>
+                            </div>
+                        </div>
+                        <div class="process-item">
+                            <div class="item-icon"><i class="fab fa-youtube"></i></div>
+                            <div class="item-content">
+                                <div class="item-title">유튜브</div>
+                                <div class="item-desc">영상 자막 추출</div>
+                                <div class="item-desc">AI 활용 요약 정리</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow-section">
+                    <div class="section-header">
+                        <div class="section-icon"><i class="fas fa-database"></i></div>
+                        구조화된 데이터 저장
+                    </div>
+                    
+                    <div class="data-flow">
+                        <div class="data-step">
+                            <div class="data-step-icon">
+                                <i class="fas fa-table"></i>
+                            </div>
+                            <div class="data-step-text">Google Sheets<br>임시 DB 저장</div>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </div>
+                        <div class="data-step">
+                            <div class="data-step-icon">
+                                <i class="fab fa-markdown"></i>
+                            </div>
+                            <div class="data-step-text">Markdown<br>문서 변환</div>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </div>
+                        <div class="data-step">
+                            <div class="data-step-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="data-step-text">Git에<br>자동 커밋</div>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </div>
+                        <div class="data-step">
+                            <div class="data-step-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="data-step-text">옵시디언 Git<br>자동 동기화</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-grid">
+                        <div class="process-item">
+                            <div class="item-icon"><i class="fas fa-table"></i></div>
+                            <div class="item-content">
+                                <div class="item-title">Google Sheets 데이터 저장</div>
+                                <div class="item-desc">• 알림/팟캐스트 생성용 데이터 관리</div>
+                                <div class="item-desc">• 히스토리 백업과 분석용 데이터베이스 역할</div>
+                            </div>
+                        </div>
+                        <div class="process-item">
+                            <div class="item-icon"><i class="fas fa-code-branch"></i></div>
+                            <div class="item-content">
+                                <div class="item-title">Git 자동화</div>
+                                <div class="item-desc">• n8n에서 자동으로 Gitea 레포지토리에 커밋</div>
+                                <div class="item-desc">• 메타데이터 및 태그 자동 생성하여 함께 저장</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">5</div>
+    </div>
+<script>
+      function scaleSlide() {
+        const slide = document.querySelector('.slide');
+        if (!slide) return;
+        const slideWidth = 1280;
+        const slideHeight = slide.offsetHeight; // 실제 슬라이드 높이 사용
+        const scale = Math.min(window.innerWidth / slideWidth, window.innerHeight / slideHeight);
+        slide.style.transform = `scale(${scale})`;
+      }
+      window.addEventListener('resize', scaleSlide);
+      document.addEventListener('DOMContentLoaded', scaleSlide);
+    </script>
+<script>
+  document.addEventListener('keydown', function(event) {
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const match = currentFile.match(/ppt_(\d{5})\.html/);
+
+    if (match && match[1]) {
+      const currentNum = parseInt(match[1], 10);
+      const totalPages = 13; // 전체 페이지 수 (ppt_00001 ~ ppt_00013)
+
+      let targetPageFileName = null;
+
+      if (event.key === 'ArrowLeft') {
+        if (currentNum > 1) {
+          targetPageFileName = `ppt_${String(currentNum - 1).padStart(5, '0')}.html`;
+        }
+      } else if (event.key === 'ArrowRight') {
+        if (currentNum < totalPages) {
+          targetPageFileName = `ppt_${String(currentNum + 1).padStart(5, '0')}.html`;
+        }
+      }
+
+      if (targetPageFileName) {
+        const newPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) + targetPageFileName;
+        window.location.href = newPath;
+      }
+    }
+  });
+
+  // Responsive scaling
+  function resizeAndPositionSlide() {
+    const slide = document.querySelector('.slide');
+    if (!slide) return;
+    const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+    slide.style.transform = `scale(${scale})`;
+  }
+  
+  window.addEventListener('resize', resizeAndPositionSlide);
+  document.addEventListener('DOMContentLoaded', resizeAndPositionSlide);
+</script>
+
+</body>
+</html>

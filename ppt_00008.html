@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>핵심 장점 및 효과</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #16161e;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1b26 0%, #16161e 100%);
+            transform-origin: center center;
+        }
+        .header {
+            background-color: #24283b;
+            color: #7aa2f7;
+            padding: 15px 40px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px 40px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .benefit-card {
+            background-color: #24283b;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid #2c3049;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .benefit-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(122, 162, 247, 0.4);
+        }
+        .card-header {
+            padding: 15px 20px;
+            color: #c0caf5;
+            font-weight: 600;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .automation-header {
+            background-color: #3d59a1;
+        }
+        .consistency-header {
+            background-color: #2f4f4f;
+        }
+        .multimedia-header {
+            background-color: #5f4b32;
+        }
+        .management-header {
+            background-color: #614551;
+        }
+        .header-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .feature-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .automation-icon {
+            background-color: #2c3349;
+            color: #7aa2f7;
+        }
+        .consistency-icon {
+            background-color: #2c3349;
+            color: #7aa2f7;
+        }
+        .multimedia-icon {
+            background-color: #2c3349;
+            color: #7aa2f7;
+        }
+        .management-icon {
+            background-color: #2c3349;
+            color: #7aa2f7;
+        }
+        .feature-text {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #9aa5ce;
+        }
+        .feature-highlight {
+            font-weight: 600;
+            color: #7aa2f7;
+        }
+        .section-title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #7aa2f7;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #565f89;
+            font-size: 16px;
+        }
+    
+</style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">💡 핵심 장점 및 효과</div>
+        
+        <div class="content">
+            <div class="section-title">자동화된 지식 관리 시스템의 가치</div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="card-header automation-header">
+                        <div> 완전 자동화된 지식 관리</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <div class="feature-icon automation-icon"><i class="fas fa-bolt"></i></div>
+                                <div class="feature-text">전체 내용이 아닌 <span class="feature-highlight">핵심 요약</span>만 제공</div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon automation-icon"><i class="fas fa-recycle"></i></div>
+                                <div class="feature-text">저장 후 방치가 아닌 <span class="feature-highlight">능동적 재소비</span> 시스템</div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon automation-icon"><i class="fas fa-user-cog"></i></div>
+                                <div class="feature-text"><span class="feature-highlight">개인화된 학습 패턴</span> 적용</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="card-header consistency-header">
+                        <div class="header-icon"><i class="fas fa-laptop"></i></div>
+                        <div>📱 언제 어디서나 일관된 경험</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <div class="feature-icon consistency-icon"><i class="fas fa-subway"></i></div>
+                                <div class="feature-text">지하철에서도, 회사에서도 <span class="feature-highlight">똑같이 쉽게 수집</span></div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon consistency-icon"><i class="fas fa-code-branch"></i></div>
+                                <div class="feature-text">Gitea 덕분에 <span class="feature-highlight">모든 기기에서 동일한 옵시디언 환경</span></div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon consistency-icon"><i class="fas fa-sync"></i></div>
+                                <div class="feature-text">집 컴퓨터에서 정리한 내용을 <span class="feature-highlight">회사에서 바로 확인</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="card-header multimedia-header">
+                        <div class="header-icon"><i class="fas fa-headphones"></i></div>
+                        <div>🎯 멀티미디어 개인화 학습</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <div class="feature-icon multimedia-icon"><i class="fas fa-clock"></i></div>
+                                <div class="feature-text">바쁠 때는 요약으로, <span class="feature-highlight">여유 있을 때는 자세히</span></div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon multimedia-icon"><i class="fas fa-comments"></i></div>
+                                <div class="feature-text"><span class="feature-highlight">대화형 팟캐스트</span>로 지루하지 않고 집중력 높은 학습</div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon multimedia-icon"><i class="fas fa-calendar-check"></i></div>
+                                <div class="feature-text"><span class="feature-highlight">시간대별 맞춤 전달</span>: 출근 시간에 맞춘 자동 배송</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="card-header management-header">
+                        <div class="header-icon"><i class="fas fa-tasks"></i></div>
+                        <div>📋 체계적인 프로젝트 관리</div>
+                    </div>
+                    <div class="card-content">
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <div class="feature-icon management-icon"><i class="fas fa-columns"></i></div>
+                                <div class="feature-text"><span class="feature-highlight">Projects 플러그인의 4단계 칸반보드</span>:</div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon management-icon"><i class="fas fa-inbox"></i></div>
+                                <div class="feature-text">📥 <span class="feature-highlight">읽지않음</span>: n8n에서 새로 수집된 자료들</div>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon management-icon"><i class="fas fa-check-circle"></i></div>
+                                <div class="feature-text">✅ <span class="feature-highlight">리뷰완료</span> → 🚀 <span class="feature-highlight">추가작업 진행</span> → 🎯 <span class="feature-highlight">완료</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">8</div>
+    </div>
+<script>
+      function scaleSlide() {
+        const slide = document.querySelector('.slide');
+        if (!slide) return;
+        const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+        slide.style.transform = `scale(${scale})`;
+      }
+      window.addEventListener('resize', scaleSlide);
+      document.addEventListener('DOMContentLoaded', scaleSlide);
+    </script>
+<script>
+  document.addEventListener('keydown', function(event) {
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const match = currentFile.match(/ppt_(\d{5})\.html/);
+
+    if (match && match[1]) {
+      const currentNum = parseInt(match[1], 10);
+      const totalPages = 13; // 전체 페이지 수 (ppt_00001 ~ ppt_00013)
+
+      let targetPageFileName = null;
+
+      if (event.key === 'ArrowLeft') {
+        if (currentNum > 1) {
+          targetPageFileName = `ppt_${String(currentNum - 1).padStart(5, '0')}.html`;
+        }
+      } else if (event.key === 'ArrowRight') {
+        if (currentNum < totalPages) {
+          targetPageFileName = `ppt_${String(currentNum + 1).padStart(5, '0')}.html`;
+        }
+      }
+
+      if (targetPageFileName) {
+        const newPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) + targetPageFileName;
+        window.location.href = newPath;
+      }
+    }
+  });
+
+  // Responsive scaling
+  function resizeAndPositionSlide() {
+    const slide = document.querySelector('.slide');
+    if (!slide) return;
+
+    const slideWidth = 1280;
+    const slideHeight = 720;
+    
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const scale = Math.min(windowWidth / slideWidth, windowHeight / slideHeight);
+
+    slide.style.transform = `scale(${scale})`;
+  }
+
+  window.addEventListener('load', resizeAndPositionSlide);
+  window.addEventListener('resize', resizeAndPositionSlide);
+</script>
+
+</body>
+</html>

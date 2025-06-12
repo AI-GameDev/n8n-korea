@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하루 일과의 변화</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #16161e;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1b26 0%, #16161e 100%);
+            transform-origin: center center;
+        }
+        .header {
+            background-color: #24283b;
+            color: #7aa2f7;
+            padding: 15px 40px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px 40px;
+        }
+        .section-title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #7aa2f7;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .time-block {
+            display: flex;
+            background-color: #24283b;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            height: 170px;
+            border: 1px solid #2c3049;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .time-block:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(122, 162, 247, 0.4);
+        }
+        .time-indicator {
+            width: 160px;
+            flex-shrink: 0;
+            color: #c0caf5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+        }
+        .morning {
+            background-color: #705033;
+        }
+        .commute {
+            background-color: #324a6d;
+        }
+        .office {
+            background-color: #2d5045;
+        }
+        .time-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #7aa2f7;
+        }
+        .time-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .time-subtitle {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        .time-details {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+        }
+        .activity-image {
+            flex-shrink: 0;
+            width: 130px;
+            height: 130px;
+            background-color: #1a1b26;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            border: 1px solid #2c3049;
+        }
+        .activity-icon {
+            font-size: 50px;
+            color: #7aa2f7;
+        }
+        .activity-content {
+            flex-grow: 1;
+        }
+        .activity-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #c0caf5;
+        }
+        .activity-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .bullet {
+            width: 24px;
+            height: 24px;
+            background-color: #2c3049;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .morning-bullet {
+            color: #ffbd66;
+        }
+        .commute-bullet {
+            color: #7aa2f7;
+        }
+        .office-bullet {
+            color: #9ece6a;
+        }
+        .text {
+            font-size: 16px;
+            line-height: 24px;
+            color: #9aa5ce;
+        }
+        .highlight {
+            font-weight: 600;
+            color: #7aa2f7;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #565f89;
+            font-size: 16px;
+        }
+    
+</style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">📅 하루 일과의 변화</div>
+        
+        <div class="content">
+            <div class="timeline">
+                <div class="time-block">
+                    <div class="time-indicator morning">
+                        <div class="time-icon"><i class="fas fa-bed"></i></div>
+                        <div class="time-title">🌅 아침</div>
+                        <div class="time-subtitle">침대에서 5분</div>
+                    </div>
+                    <div class="time-details">
+                        <div class="activity-image">
+                            <div class="activity-icon"><i class="fas fa-mobile-alt"></i></div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">스마트폰으로 빠른 정보 확인</div>
+                            <ul class="activity-list">
+                                <li class="activity-item">
+                                    <div class="bullet morning-bullet"><i class="fas fa-check"></i></div>
+                                    <div class="text">어제 모은 정보들 <span class="highlight">미리보기</span> 확인</div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="bullet morning-bullet"><i class="fas fa-check"></i></div>
+                                    <div class="text">"이건 중요해 보이네, 나중에 자세히 보자" 체크</div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="bullet morning-bullet"><i class="fas fa-check"></i></div>
+                                    <div class="text">시간 효율적으로 활용하며 하루를 생산적으로 시작</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block">
+                    <div class="time-indicator commute">
+                        <div class="time-title">🚗 출근길</div>
+                        <div class="time-subtitle">30분 이동 시간</div>
+                    </div>
+                    <div class="time-details">
+                        <div class="activity-image">
+                            <div class="activity-icon"><i class="fas fa-headphones"></i></div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">멀티미디어로 정보 소비</div>
+                            <ul class="activity-list">
+                                <li class="activity-item">
+                                    <div class="bullet commute-bullet"><i class="fas fa-check"></i></div>
+                                    <div class="text">이메일 뉴스레터로 받은 <span class="highlight">요약 및 URL</span> 확인</div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="bullet commute-bullet"><i class="fas fa-check"></i></div>
+                                    <div class="text"><span class="highlight">AI 대화형 팟캐스트</span> 청취: 2명이 토론하는 형태로 더 생생하게</div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="bullet commute-bullet"><i class="fas fa-check"></i></div>
+                                    <div class="text">복잡한 내용도 <span class="highlight">대화 형식</span>으로 이해하기 쉽게</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="time-block">
+                    <div class="time-indicator office">
+                        <div class="time-icon"><i class="fas fa-building"></i></div>
+                        <div class="time-title">🏢 회사 도착</div>
+                        <div class="time-subtitle">20분 정리 시간</div>
+                    </div>
+                    <div class="time-details">
+                        <div class="activity-image">
+                            <div class="activity-icon"><i class="fas fa-tasks"></i></div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-title">체계적인 지식 정리 및 관리</div>
+                            <ul class="activity-list">
+                                <li class="activity-item">
+                                    <div class="bullet office-bullet"><i class="fas fa-check"></i></div>
+                                    <div class="text"><span class="highlight">옵시디언 Projects 플러그인</span>: 칸반보드 형태로 수집된 자료들 한눈에 확인</div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="bullet office-bullet"><i class="fas fa-check"></i></div>
+                                    <div class="text"><span class="highlight">4단계 워크플로우</span>: 읽지않음 → 리뷰완료 → 추가작업 진행(블로그) → 완료</div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="bullet office-bullet"><i class="fas fa-check"></i></div>
+                                    <div class="text"><span class="highlight">완료 후 정리</span>: 적합한 폴더로 이동하거나 삭제로 깔끔하게 관리</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">7</div>
+    </div>
+<script>
+      function scaleSlide() {
+        const slide = document.querySelector('.slide');
+        if (!slide) return;
+        const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+        slide.style.transform = `scale(${scale})`;
+      }
+      window.addEventListener('resize', scaleSlide);
+      document.addEventListener('DOMContentLoaded', scaleSlide);
+    </script>
+<script>
+  document.addEventListener('keydown', function(event) {
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const match = currentFile.match(/ppt_(\d{5})\.html/);
+
+    if (match && match[1]) {
+      const currentNum = parseInt(match[1], 10);
+      const totalPages = 13; // 전체 페이지 수 (ppt_00001 ~ ppt_00013)
+
+      let targetPageFileName = null;
+
+      if (event.key === 'ArrowLeft') {
+        if (currentNum > 1) {
+          targetPageFileName = `ppt_${String(currentNum - 1).padStart(5, '0')}.html`;
+        }
+      } else if (event.key === 'ArrowRight') {
+        if (currentNum < totalPages) {
+          targetPageFileName = `ppt_${String(currentNum + 1).padStart(5, '0')}.html`;
+        }
+      }
+
+      if (targetPageFileName) {
+        const newPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) + targetPageFileName;
+        window.location.href = newPath;
+      }
+    }
+  });
+
+  // Responsive scaling
+  function resizeAndPositionSlide() {
+    const slide = document.querySelector('.slide');
+    if (!slide) return;
+
+    const slideWidth = 1280;
+    const slideHeight = 720;
+    
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const scale = Math.min(windowWidth / slideWidth, windowHeight / slideHeight);
+
+    slide.style.transform = `scale(${scale})`;
+  }
+
+  window.addEventListener('load', resizeAndPositionSlide);
+  window.addEventListener('resize', resizeAndPositionSlide);
+</script>
+
+</body>
+</html>

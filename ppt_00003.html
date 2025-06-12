@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시스템 아키텍처 개요</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #16161e;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1b26 0%, #16161e 100%);
+            transform-origin: center center;
+        }
+        .header {
+            background-color: #24283b;
+            color: #7aa2f7;
+            padding: 15px 40px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px 40px;
+        }
+        .architecture-diagram {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 30px;
+            position: relative;
+        }
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(122, 162, 247, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .flow-item {
+            text-align: center;
+            background-color: #24283b;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin: 0 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 180px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .flow-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(122, 162, 247, 0.4);
+        }
+        .flow-item-icon {
+            font-size: 24px;
+            color: #7aa2f7;
+            margin-bottom: 5px;
+        }
+        .flow-arrow {
+            color: #7aa2f7;
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #7aa2f7;
+            margin: 30px 0 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #2c3049;
+        }
+        .two-columns {
+            display: flex;
+            gap: 30px;
+        }
+        .column {
+            flex: 1;
+            background-color: #24283b;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .equipment-item, .channel-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .equipment-icon, .channel-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #1a1b26;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            color: #7aa2f7;
+            font-size: 18px;
+        }
+        .equipment-details, .channel-details {
+            flex: 1;
+        }
+        .equipment-name, .channel-name {
+            font-weight: 600;
+            font-size: 18px;
+            color: #c0caf5;
+            margin-bottom: 5px;
+        }
+        .equipment-desc, .channel-desc {
+            font-size: 16px;
+            color: #9aa5ce;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #565f89;
+            font-size: 16px;
+        }
+    
+</style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">🏗️ 시스템 아키텍처 개요</div>
+        
+        <div class="content">
+            <div class="architecture-diagram">
+                <div class="flow-container">
+                    <div class="flow-item">
+                        <div class="flow-item-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div style="color: #c0caf5;">📱 정보 수집</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="flow-item">
+                        <div class="flow-item-icon"><i class="fas fa-cogs"></i></div>
+                        <div style="color: #c0caf5;">⚙️ n8n 자동화</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="flow-item">
+                        <div class="flow-item-icon"><i class="fas fa-file-alt"></i></div>
+                        <div style="color: #c0caf5;">📝 옵시디언 정리</div>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="flow-item">
+                        <div class="flow-item-icon"><i class="fas fa-headphones"></i></div>
+                        <div style="color: #c0caf5;">🎧 멀티미디어 전달</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="two-columns">
+                <div class="column">
+                    <div class="section-title">메인 장비</div>
+                    
+                    <div class="equipment-item">
+                        <div class="equipment-icon"><i class="fas fa-server"></i></div>
+                        <div class="equipment-details">
+                            <div class="equipment-name">시놀로지 나스</div>
+                            <div class="equipment-desc">• n8n (워크플로우 자동화 도구)</div>
+                            <div class="equipment-desc">• Gitea (옵시디언 메모 동기화를 위한 Git 서버)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="equipment-item">
+                        <div class="equipment-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="equipment-details">
+                            <div class="equipment-name">옵시디언</div>
+                            <div class="equipment-desc">• Projects 플러그인 (지식 관리 대시보드)</div>
+                            <div class="equipment-desc">• Git 플러그인 (메모 동기화)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="section-title">정보 수집 채널</div>
+                    
+                    <div class="channel-item">
+                        <div class="channel-icon"><i class="fas fa-desktop"></i></div>
+                        <div class="channel-details">
+                            <div class="channel-name">PC</div>
+                            <div class="channel-desc">• Chrome 확장프로그램</div>
+                            <div class="channel-desc">• Windsurf 에디터로 바이브코딩 개발</div>
+                            <div class="channel-desc">• n8n 웹훅 호출</div>
+                        </div>
+                    </div>
+                    
+                    <div class="channel-item">
+                        <div class="channel-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="channel-details">
+                            <div class="channel-name">모바일</div>
+                            <div class="channel-desc">• Telegram URL 공유</div>
+                            <div class="channel-desc">• n8n 웹훅 호출</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">3</div>
+    </div>
+<script>
+      function scaleSlide() {
+        const slide = document.querySelector('.slide');
+        if (!slide) return;
+        const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+        slide.style.transform = `scale(${scale})`;
+      }
+      window.addEventListener('resize', scaleSlide);
+      document.addEventListener('DOMContentLoaded', scaleSlide);
+    </script>
+<script>
+  document.addEventListener('keydown', function(event) {
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const match = currentFile.match(/ppt_(\d{5})\.html/);
+
+    if (match && match[1]) {
+      const currentNum = parseInt(match[1], 10);
+      const totalPages = 13; // 전체 페이지 수 (ppt_00001 ~ ppt_00013)
+
+      let targetPageFileName = null;
+
+      if (event.key === 'ArrowLeft') {
+        if (currentNum > 1) {
+          targetPageFileName = `ppt_${String(currentNum - 1).padStart(5, '0')}.html`;
+        }
+      } else if (event.key === 'ArrowRight') {
+        if (currentNum < totalPages) {
+          targetPageFileName = `ppt_${String(currentNum + 1).padStart(5, '0')}.html`;
+        }
+      }
+
+      if (targetPageFileName) {
+        const newPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) + targetPageFileName;
+        window.location.href = newPath;
+      }
+    }
+  });
+
+  // Responsive scaling
+  function resizeAndPositionSlide() {
+    const slide = document.querySelector('.slide');
+    if (!slide) return;
+
+    const slideWidth = 1280;
+    const slideHeight = 720;
+    
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const scale = Math.min(windowWidth / slideWidth, windowHeight / slideHeight);
+
+    slide.style.transform = `scale(${scale})`;
+  }
+
+  window.addEventListener('load', resizeAndPositionSlide);
+  window.addEventListener('resize', resizeAndPositionSlide);
+</script>
+
+</body>
+</html>

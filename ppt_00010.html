@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도입 효과 및 성과</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #16161e;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1b26 0%, #16161e 100%);
+            transform-origin: center center;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #24283b;
+            color: #7aa2f7;
+            padding: 15px 40px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #63b3ed;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .qualitative-section {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #2d3748;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #1a202c;
+            transition: all 0.3s ease;
+        }
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-color: #2d3748;
+        }
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #2a4365;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+            color: #63b3ed;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        .benefit-content {
+            flex: 1;
+        }
+        .benefit-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+        .benefit-desc {
+            font-size: 16px;
+            color: #a0aec0;
+            line-height: 1.5;
+        }
+        .intro-text {
+            font-size: 18px;
+            color: #a0aec0;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #a0aec0;
+            font-size: 16px;
+        }
+    
+</style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">📊 도입 효과 및 성과</div>
+        
+        <div class="content">
+            <div class="qualitative-section">
+                <ul class="benefit-list">
+                    <li class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check-double"></i></div>
+                        <div class="benefit-content">
+                            <div class="benefit-title">ReadItLater 딜레마 해결</div>
+                            <div class="benefit-desc">저장만 하고 안 보는 문제를 자동화된 정보 가공과 재제공으로 완전히 해결</div>
+                        </div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-compass"></i></div>
+                        <div class="benefit-content">
+                            <div class="benefit-title">자유로운 정보 탐색</div>
+                            <div class="benefit-desc">정보 누락 걱정 없이 다양한 출처에서 지식 수집 가능</div>
+                        </div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-brain"></i></div>
+                        <div class="benefit-content">
+                            <div class="benefit-title">전문성 향상</div>
+                            <div class="benefit-desc">체계적 지식 축적으로 분야별 깊이 있는 이해와 통찰력 개발</div>
+                        </div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-columns"></i></div>
+                        <div class="benefit-content">
+                            <div class="benefit-title">투명한 진행 상황 관리</div>
+                            <div class="benefit-desc">4단계 칸반보드로 지식 처리 과정이 명확하게 시각화</div>
+                        </div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="benefit-content">
+                            <div class="benefit-title">지식 응용력 증가</div>
+                            <div class="benefit-desc">자동 요약과 구조화로 새로운 연결고리와 아이디어 발견 용이</div>
+                        </div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+                        <div class="benefit-content">
+                            <div class="benefit-title">시간 활용 최적화</div>
+                            <div class="benefit-desc">출퇴근 시간 등 자투리 시간을 효율적인 학습 시간으로 전환</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="page-number">10</div>
+    </div>
+<script>
+      function scaleSlide() {
+        const slide = document.querySelector('.slide');
+        if (!slide) return;
+        const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+        slide.style.transform = `scale(${scale})`;
+      }
+      window.addEventListener('resize', scaleSlide);
+      document.addEventListener('DOMContentLoaded', scaleSlide);
+    </script>
+<script>
+  document.addEventListener('keydown', function(event) {
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const match = currentFile.match(/ppt_(\d{5})\.html/);
+
+    if (match && match[1]) {
+      const currentNum = parseInt(match[1], 10);
+      const totalPages = 13; // 전체 페이지 수 (ppt_00001 ~ ppt_00013)
+
+      let targetPageFileName = null;
+
+      if (event.key === 'ArrowLeft') {
+        if (currentNum > 1) {
+          targetPageFileName = `ppt_${String(currentNum - 1).padStart(5, '0')}.html`;
+        }
+      } else if (event.key === 'ArrowRight') {
+        if (currentNum < totalPages) {
+          targetPageFileName = `ppt_${String(currentNum + 1).padStart(5, '0')}.html`;
+        }
+      }
+
+      if (targetPageFileName) {
+        const newPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) + targetPageFileName;
+        window.location.href = newPath;
+      }
+    }
+  });
+
+  // Responsive scaling
+  function resizeAndPositionSlide() {
+    const slide = document.querySelector('.slide');
+    if (!slide) return;
+
+    const slideWidth = 1280;
+    const slideHeight = 720;
+    
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const scale = Math.min(windowWidth / slideWidth, windowHeight / slideHeight);
+
+    slide.style.transform = `scale(${scale})`;
+  }
+
+  window.addEventListener('load', resizeAndPositionSlide);
+  window.addEventListener('resize', resizeAndPositionSlide);
+</script>
+
+</body>
+</html>

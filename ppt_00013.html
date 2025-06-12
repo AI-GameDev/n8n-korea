@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>감사합니다</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #16161e;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1b26 0%, #16161e 100%);
+            transform-origin: center center;
+        }
+        .header {
+            background-color: #24283b;
+            color: #7aa2f7;
+            padding: 15px 40px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        .thank-you {
+            font-size: 48px;
+            font-weight: 700;
+            color: #7aa2f7;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .quote {
+            font-size: 20px;
+            color: #c0caf5;
+            margin-bottom: 50px;
+            text-align: center;
+            font-style: italic;
+            max-width: 800px;
+        }
+        .links-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .link-card {
+            background-color: #24283b;
+            border-radius: 12px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #2c3049;
+            text-decoration: none;
+        }
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+        .link-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #3d59a1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: #c0caf5;
+            font-size: 22px;
+        }
+        .mcp-icon {
+            background-color: #5f4b32;
+        }
+        .link-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .link-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #c0caf5;
+        }
+        .link-url {
+            font-size: 14px;
+            color: #7aa2f7;
+        }
+        .dog-image-container {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .dog-image {
+            max-width: 300px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            border-radius: 12px;
+            border: 5px solid #24283b;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            object-fit: contain;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #565f89;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">감사합니다</div>
+        
+        <div class="content">
+            <div class="dog-image-container">
+                <img src="images/img.png" alt="댕댕이멍멍" class="dog-image" onerror="this.src='https://placehold.co/200x200/24283b/7aa2f7?text=🐶'">
+            </div>
+            
+            <div class="thank-you">감사합니다</div>
+                        
+            <div class="links-container">
+                <a href="https://aiandgamedev.com/" class="link-card" target="_blank">
+                    <div class="link-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">AI&GameDev</div>
+                        <div class="link-url">aiandgamedev.com</div>
+                    </div>
+                </a>
+                
+                <a href="https://mcpkorea.com/" class="link-card" target="_blank">
+                    <div class="link-icon mcp-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">MCP Korea</div>
+                        <div class="link-url">mcpkorea.com</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="page-number">13</div>
+    </div>
+<script>
+      function scaleSlide() {
+        const slide = document.querySelector('.slide');
+        if (!slide) return;
+        const scale = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+        slide.style.transform = `scale(${scale})`;
+      }
+      window.addEventListener('resize', scaleSlide);
+      document.addEventListener('DOMContentLoaded', scaleSlide);
+    </script>
+<script>
+  document.addEventListener('keydown', function(event) {
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const match = currentFile.match(/ppt_(\d{5})\.html/);
+
+    if (match && match[1]) {
+      const currentNum = parseInt(match[1], 10);
+      const totalPages = 13; // 전체 페이지 수 (ppt_00001 ~ ppt_00013)
+
+      let targetPageFileName = null;
+
+      if (event.key === 'ArrowLeft') {
+        if (currentNum > 1) {
+          targetPageFileName = `ppt_${String(currentNum - 1).padStart(5, '0')}.html`;
+        }
+      } else if (event.key === 'ArrowRight') {
+        if (currentNum < totalPages) {
+          targetPageFileName = `ppt_${String(currentNum + 1).padStart(5, '0')}.html`;
+        }
+      }
+
+      if (targetPageFileName) {
+        const newPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1) + targetPageFileName;
+        window.location.href = newPath;
+      }
+    }
+  });
+</script>
+</body>
+</html>
